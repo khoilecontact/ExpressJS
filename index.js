@@ -10,7 +10,9 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 var users = [
   {id: 1, name: "Khoi Le"},
-  {id: 2, name: "Khoi Nguyen"}
+  {id: 2, name: "Khoi Nguyen"},
+  {id: 3, name: "Thinh Tran"}
+
 
 ]; // array of objects
 
@@ -25,7 +27,7 @@ app.get('/',(req,res)=> {
 //render khi can template tu 1 file khac, sau do truyen object vao 
 
 app.get('/users',(req,res)=> {
-  res.render('users/index', {
+  res.render('users/index.pug', {
     users: users //truyen vao mang objects
   })
 }) 
