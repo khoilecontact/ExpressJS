@@ -1,4 +1,3 @@
-
 var express = require('express')
 const app = express() // tao 1 express moi
 const port = 3000
@@ -8,6 +7,8 @@ var usersRouter = require('./routes/users.route')
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
+app.use(express.static('public')) // it means that we storage files in public
 
 app.set('view engine', 'pug'); //install pug as view
 app.set('views', './views'); // view 
