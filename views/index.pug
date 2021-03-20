@@ -1,7 +1,11 @@
-h1 hello #{name} 
-p This is the first site 
-p To be precise, it is the first index.pug in /views
+extends ./layout/common 
 
-img(src='/image/photo.jpg')
 
-a(href='/users') Users 
+block content 
+    h1 hello #{name} 
+    p This is the first site 
+    p To be precise, it is the first index.pug in /views
+
+    img(src='/image/photo.jpg')
+
+    a.btn.btn-primary(href='/users') Users 
