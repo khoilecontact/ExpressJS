@@ -3,7 +3,7 @@ const app = express() // tao 1 express moi
 const port = 3000
 var bodyParser = require('body-parser')
 
-var usersRouter = require('./routes/users.route')
+var usersRouter = require('./routes/users.route') // shorten the router 
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
@@ -15,7 +15,7 @@ app.set('views', './views'); // view
 
 app.get('/',(req,res)=> {
   res.render('index.pug', {
-    name: "AAA" 
+    name: "Khoi Le testing" 
   })
 }) // dinh danh thong tin gi se duoc response khi get /
 //render khi can template tu 1 file khac, sau do truyen object vao 

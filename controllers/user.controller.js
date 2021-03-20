@@ -1,6 +1,7 @@
 var db = require('../db');
 var shortid = require('shortid')
 
+
 module.exports.index = (req, res)=> {
     res.render('users/index.pug', {
         users: db.get('users').value() //truyen vao mang objects tu database
@@ -32,23 +33,6 @@ module.exports.get = (req,res)=>{ //dynamic routing :id
 
 module.exports.postCreate =  (req, res)=> {
     req.body.id=shortid.generate();
-    var errors = [];
-
-    if (!req.body.name) {
-      errors.push("Name is required"); 
-    }
-
-    if (!req.body.phone) {
-      errors.push("Phone is required");
-    }
-
-    if (errors.length > 0) {
-      res.render('users/create', {
-        errors: errors, // put in one object errors to /create with the value of errors
-        value: req.body 
-      }) 
-      return;
-    }
 
     db.get('users').push(req.body).write(); // save information posted by human 
    // replace users by db.get('users') cuz we are using database now 
