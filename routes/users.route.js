@@ -19,5 +19,7 @@ router.get('/search', controller.search)
 router.get('/create', controller.create); //tao site create va tro den template create trong thu muc users 
   
 router.get('/:id', controller.get)
+
+router.get('/cookie', controller.cookie)
   
 router.post('/create',validate.postCreate ,controller.postCreate); // checking before posting 

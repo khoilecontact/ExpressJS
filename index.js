@@ -2,11 +2,13 @@ var express = require('express')
 const app = express() // tao 1 express moi
 const port = 3000
 var bodyParser = require('body-parser')
+var cookieParser = require('cookie-parser')
 
 var usersRouter = require('./routes/users.route') // shorten the router 
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cookieParser())
 
 app.use(express.static('public')) // it means that we storage files in public
 

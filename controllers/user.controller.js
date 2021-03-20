@@ -31,6 +31,11 @@ module.exports.get = (req,res)=>{ //dynamic routing :id
     })
   }
 
+module.exports.cookie = (req, res, next) => {
+  res.cookie('user-id', 125485)
+  res.send("Hello there")
+}
+
 module.exports.postCreate =  (req, res)=> {
     req.body.id=shortid.generate();
 
