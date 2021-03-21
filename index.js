@@ -4,7 +4,11 @@ const port = 3000
 var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 
+//middleware
+var authMiddleware = require('./middleware/auth.middleware')
+
 var usersRouter = require('./routes/users.route') // shorten the router 
+var authRoute = require('./routes/auth.route') //require the route from route folder
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
@@ -22,7 +26,8 @@ app.get('/',(req,res)=> {
 }) // dinh danh thong tin gi se duoc response khi get /
 //render khi can template tu 1 file khac, sau do truyen object vao 
 
-app.use('/users', usersRouter)
+app.use('/users',authMiddleware.requireAuth , usersRouter)
+app.use('/auth', authRoute)
 
 app.listen(port, () => {
   console.log('Example app listening at' +port)
