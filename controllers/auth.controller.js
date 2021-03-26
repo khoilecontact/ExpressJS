@@ -30,7 +30,10 @@ module.exports.postLogin = (req,res) => { //check if there is a true account
         return 
     }
 
-    res.cookie('userId', user.id)
+    res.cookie('userId', user.id, {
+        signed: true //signed cookie 
+    })
+    
     res.redirect('/users')
 
 }

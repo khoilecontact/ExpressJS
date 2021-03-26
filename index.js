@@ -7,14 +7,15 @@ var cookieParser = require('cookie-parser')
 //middleware
 var authMiddleware = require('./middleware/auth.middleware')
 
-var usersRouter = require('./routes/users.route') // shorten the router 
-var authRoute = require('./routes/auth.route') //require the route from route folder
+var usersRouter = require('./routes/users.route'); // rquire route from the users.route file 
+var authRoute = require('./routes/auth.route'); //require the route from route folder
+var productRoute = require('./routes/product.route');
 
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-app.use(cookieParser())
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(cookieParser('asdaiafafkahf'));
 
-app.use(express.static('public')) // it means that we storage files in public
+app.use(express.static('public')); // it means that we storage files in public
 
 app.set('view engine', 'pug'); //install pug as view
 app.set('views', './views'); // view 
@@ -22,12 +23,15 @@ app.set('views', './views'); // view
 app.get('/',(req,res)=> {
   res.render('index.pug', {
     name: "Khoi Le testing" 
-  })
-}) // dinh danh thong tin gi se duoc response khi get /
+  });
+}); // dinh danh thong tin gi se duoc response khi get /
 //render khi can template tu 1 file khac, sau do truyen object vao 
 
-app.use('/users',authMiddleware.requireAuth , usersRouter)
-app.use('/auth', authRoute)
+
+app.use('/users',authMiddleware.requireAuth , usersRouter);
+app.use('/auth', authRoute); //auth login
+app.use('/products', productRoute);
+
 
 app.listen(port, () => {
   console.log('Example app listening at' +port)

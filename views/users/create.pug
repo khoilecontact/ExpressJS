@@ -8,6 +8,15 @@ block content
             .alert.alert-danger(role='alert')=error 
 
     form(aciton="/users/create", method="POST")
+
+        .form-group 
+            label(for="username") User name
+            input#username.form-control(name="username", type="text", value = value ? value.username : "")
+
+        .form-group 
+            label(for="password") Password 
+            input#password.form-control(name="password", type="text", value = value ? value.password : "")
+
         .form-group 
             label(for="name") Name 
             input#name.form-control(name="name", type="text", value = value ? value.name : "")
