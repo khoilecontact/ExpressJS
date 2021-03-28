@@ -39,6 +39,40 @@
       "id": "akLgMMpYU",
       "username": "DanhHung",
       "password": "123456"
+    },
+    {
+      "username": "Khoilk",
+      "password": "123456",
+      "name": "Khoi Le",
+      "phone": "012233445566",
+      "country": "Vietnam",
+      "avatar": "joker-wallpapers25.jpg",
+      "id": "FwYpJpv63"
+    },
+    {
+      "username": "jackson",
+      "password": "123456",
+      "name": "Jack",
+      "phone": "123458",
+      "country": "USA",
+      "id": "RxWdimRNH"
+    },
+    {
+      "username": "jackson",
+      "password": "123456",
+      "name": "Jack",
+      "phone": "11223344",
+      "country": "USA",
+      "id": "7SqmmAahL"
+    },
+    {
+      "username": "Jerry",
+      "password": "123456",
+      "name": "Jerry",
+      "phone": "222",
+      "country": "sa",
+      "id": "8sdZR8eRb",
+      "avatar": "uploads\\5d9ff07535362784650b38a32f34599f"
     }
   ],
   "products": [

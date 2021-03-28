@@ -1,5 +1,6 @@
 var db = require('../db');
 var shortid = require('shortid')
+const http = require('http')
 
 
 module.exports.index = (req, res)=> {
@@ -38,6 +39,7 @@ module.exports.cookie = (req, res, next) => {
 
 module.exports.postCreate =  (req, res)=> {
     req.body.id=shortid.generate();
+    req.body.avatar=req.file.path.split('\\').slice(1).join('\\');
 
     db.get('users').push(req.body).write(); // save information posted by human 
    // replace users by db.get('users') cuz we are using database now 

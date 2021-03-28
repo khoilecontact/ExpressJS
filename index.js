@@ -11,6 +11,8 @@ var usersRouter = require('./routes/users.route'); // rquire route from the user
 var authRoute = require('./routes/auth.route'); //require the route from route folder
 var productRoute = require('./routes/product.route');
 
+app.use(express.static('public'));
+
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser('asdaiafafkahf'));

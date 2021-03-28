@@ -3,17 +3,29 @@ extends ./layout/common
 
 block content 
     h1 Products
-        <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="/products?page=page-1" tabindex="-1" aria-disabled="true">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="/products?page=1">1</a></li>
-                    <li class="page-item"><a class="page-link" href="/products?page=2">2</a></li>
-                    <li class="page-item"><a class="page-link" href="/products?page=3">3</a></li>
-                    <li class="page-item">
-                    <a class="page-link" href="/products?page=page+1">Next</a>
-                    </li>
-                </ul>
-        </nav>
+
+        each product in products 
+            .card(style='width: 14px;')
+                img.card-img-top(src=product.image)
+                .card-body
+                    h5.card-title product.name
+                    p.card-text product.description 
+                    a.btn.btn-primary(href='#') Buy
+
+
+
+    nav(aria-label='Page navigation example')
+        ul.pagination.justify-content-center
+            li.page-item.disabled
+                a.page-link(href='/products?page=page-1', tabindex='-1', aria-disabled='true') Previous
+            li.page-item
+                a.page-link(href='/products?page=1') 1
+            li.page-item
+                a.page-link(href='/products?page=2') 2
+            li.page-item
+                a.page-link(href='/products?page=3') 3
+            li.page-item
+                a.page-link(href='/products?page=page+1') Next
+                
+
         

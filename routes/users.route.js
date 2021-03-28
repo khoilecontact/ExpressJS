@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
 const shortid = require('shortid')
-
+const multer = require('multer')
 
 var controller = require('../controllers/user.controller')
 var db = require('../db')
 
+const upload = multer({dest: './public/uploads/'}) // where to upload the image(form)
 
 module.exports = router;
 
@@ -23,4 +24,5 @@ router.get('/:id', controller.get)
 
 router.get('/cookie', controller.cookie)
   
-router.post('/create',validate.postCreate ,controller.postCreate); // checking before posting 
+router.post('/create', upload.single('avatar'), // check upload 1 avatar save to req.file 
+validate.postCreate ,controller.postCreate); // checking before posting 

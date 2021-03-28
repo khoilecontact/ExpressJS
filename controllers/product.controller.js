@@ -8,6 +8,7 @@ module.exports.index= (req, res) => {
     var end = start + perpage;
 
   res.render('product.pug', {
-    products: db.get('products').value().slice(start, end)
+    products: db.get('products').value().slice(start, end),
+    page: page
   })
 }
