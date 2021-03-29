@@ -776,5 +776,15 @@
       "description": "ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien",
       "price": "$7.72"
     }
+  ],
+  "session": [
+    {
+      "id": "z0-pD3viH",
+      "cart": {
+        "b376a59e-66b4-453e-a0f7-22bf8c0540c3": 1,
+        "fb196bbd-9ac1-48d2-a425-4ede216c85fa": 1,
+        "395d9058-ea9d-47f5-a5d3-6a6e1dd158ef": 1
+      }
+    }
   ]
 }

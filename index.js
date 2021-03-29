@@ -6,16 +6,19 @@ var cookieParser = require('cookie-parser')
 
 //middleware
 var authMiddleware = require('./middleware/auth.middleware')
+const sessionMiddleware = require('./middleware/session.middleware')
 
 var usersRouter = require('./routes/users.route'); // rquire route from the users.route file 
 var authRoute = require('./routes/auth.route'); //require the route from route folder
 var productRoute = require('./routes/product.route');
+var cartRoute = require('./routes/cart.route');
 
 app.use(express.static('public'));
 
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser('asdaiafafkahf'));
+app.use(sessionMiddleware); //effect all of the website
 
 app.use(express.static('public')); // it means that we storage files in public
 
@@ -33,8 +36,9 @@ app.get('/',(req,res)=> {
 app.use('/users',authMiddleware.requireAuth , usersRouter);
 app.use('/auth', authRoute); //auth login
 app.use('/products', productRoute);
+app.use('/cart', cartRoute);
 
 
 app.listen(port, () => {
-  console.log('Example app listening at' +port)
+  console.log('Example app listening at ' + port)
 }) // lang nghe o port va callback 1 function

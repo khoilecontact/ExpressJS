@@ -39,7 +39,7 @@ module.exports.cookie = (req, res, next) => {
 
 module.exports.postCreate =  (req, res)=> {
     req.body.id=shortid.generate();
-    req.body.avatar=req.file.path.split('\\').slice(1).join('\\');
+    req.body.avatar=req.file.path.split('\\').slice(1).join('\\'); 
 
     db.get('users').push(req.body).write(); // save information posted by human 
    // replace users by db.get('users') cuz we are using database now 
