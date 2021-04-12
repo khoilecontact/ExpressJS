@@ -41,7 +41,7 @@ app.use('/users',authMiddleware.requireAuth , usersRouter);
 app.use('/auth', authRoute); //auth login
 app.use('/products', productRoute);
 app.use('/cart', cartRoute);
-app.use('/transfer', authMiddleware.requireAuth, transferRoute);
+app.use('/transfer', transferRoute);
 
 
 app.listen(port, () => {

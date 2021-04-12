@@ -3,7 +3,8 @@ var shortid = require('shortid')
 
 module.exports.create = (req, res, next) => {
     res.render('transfer/create.pug', {
-    csurfToken: req.csurfToken}
+    csrfToken: req.csrfToken()
+}
     )
 }
 
