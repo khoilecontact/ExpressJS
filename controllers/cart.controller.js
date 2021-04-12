@@ -7,18 +7,18 @@ module.exports.addToCart = (req, res, next) => {
     if (!sessionId) {
         res.redirect('/products');
         return;
-    }
+    } //avoid sessionId is undefined 
 
     var count = db.get('session')
     .find({id: sessionId})
     .get('cart.' + productId, 0)
-    .value()
+    .value() //how many product of this type is in the cart
 
     db.get('session')
     .find({id: sessionId})
     .set('cart.' + productId, count+1)
-    .write()
+    .write() //add one more product 
 
-    res.redirect('/products')
+    res.redirect('/products') //return to products
 
 }

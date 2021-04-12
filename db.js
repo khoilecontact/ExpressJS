@@ -5,7 +5,11 @@ var adpter = new FileSync('db.json')
 const db = low(adpter) // create a new object by calling low and input adapter
 
 //set some defaults 
-db.defaults({ users: [], session: [] })
+db.defaults({ 
+  users: [], 
+  session: [],
+   transfers: []
+})
   .write();
 
 module.exports = db;
