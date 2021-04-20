@@ -23,7 +23,7 @@ app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser('asdaiafafkahf'));
 app.use(sessionMiddleware); //effect all of the website
-app.use(csurf({cookie: true}));
+// app.use(csurf({cookie: true}));
 app.use(express.static('public')); // it means that we storage files in public
 
 app.set('view engine', 'pug'); //install pug as view
